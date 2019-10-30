@@ -11,7 +11,7 @@
 <body>
     <?php
 
-    $possui_cartao = true;
+    $possui_cartao = false;
     $valor_compra = 426.89;
     $valor_frete = 78;
     $teve_desconto = false;
@@ -36,11 +36,8 @@
 
     <p>
         Possuí cartão da loja?
-        <?php if ($possui_cartao) {
-            echo "SIM";
-        } else {
-            echo "NÃO";
-        } ?>
+        <?= $possui_cartao? 'Sim' : 'Não' ?>
+
     </p>
 
     <p>
@@ -55,11 +52,7 @@
 
     <p>
         Teve Desconto?
-        <?php if ($teve_desconto) {
-            echo "SIM";
-        } else {
-            echo "NÃO";
-        } ?>
+       <?= $teve_desconto? 'Sim' : 'Não' ?>
 
     </p>
 
