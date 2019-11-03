@@ -27,14 +27,32 @@ class Pai {
         $acao == 'executarMania' ? $this->executarMania(): '';
 
     }
-
 }
 
-$pai= new Pai;
-echo $pai->nome;
-echo $pai->sobrenome = ' Melancia';
-$pai->executarAcao('responder');
-$pai->executarAcao('executarMania');
+class Filho extends Pai {
+    private function executarMania() {
+        echo 'lalalalalalalaa';
+    }
+    protected function responder () {
+        echo 'olá';
+    }
+}
+
+
+$filho = new Filho;
+echo '<pre>';
+print_r($filho);
+echo '</pre>';
+
+// exibit métodos do objeto
+echo '<pre>';
+print_r(get_class_methods($filho));
+echo '</pre>';
+
+//
+$filho->executarAcao('responder');
+echo '<BR>';
+$filho->executarAcao('executarMania');
 
 
 
