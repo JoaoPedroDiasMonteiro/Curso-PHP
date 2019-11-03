@@ -41,7 +41,7 @@ class Funcionario {
 
     // metodos
     function resumirCadFunc () {
-        return "$this->nome possui $this->numeroFilhos filho(s) e seu número de telefone é $this->telefone";
+        return $this->__get('nome') . ' possui '. $this->__get('numeroFilhos') . ' filho(s) ' . 'e seu número de telefone é ' . $this->__get('telefone');
     }
 
     function modificarNumeroFilhos ($valor) {
@@ -53,7 +53,6 @@ $y = new Funcionario ();
 $y->__set('nome', 'José da Silva');
 $y->__set('numeroFilhos', '42');
 $y->__set('telefone', '9996666');
-echo $y->__get('telefone');
 echo $y->resumirCadFunc();
 
 echo '<br>';
@@ -63,4 +62,3 @@ $z->__set('nome', 'Tomas Turbando');
 $z->__set('numeroFilhos', '0');
 $z->__set('telefone', '9992222');
 echo $z->resumirCadFunc();
-?>
